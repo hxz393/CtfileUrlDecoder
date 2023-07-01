@@ -1,0 +1,7 @@
+/.idea
+/build
+/dist
+/venv
+/config.txt
+/CtfileUrlDecoder.spec
+__pycache__

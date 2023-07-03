@@ -1,3 +1,15 @@
+"""
+这是一个Python文件，其中包含一个函数：`request_download_link`。
+
+函数 `request_download_link` 用于向城通服务器请求下载链接。它接受四个参数，分别是需要下载的文件名 `file`，访问密码 `passwd`，用户token `token` 以及请求之间的延迟时间 `delay`。首先，函数构建了一个URL，包含了这四个参数以及一个随机数。然后，它发送了一个GET请求到这个URL，并把响应解析为JSON。如果响应的代码是200，函数返回下载链接，否则返回错误代码。在发生错误时，如找不到链接或网络请求失败，函数将返回相应的错误信息或 `None`。无论是否成功，函数在最后都会根据 `delay` 参数进行暂停。
+
+此模块主要用于与城通服务器进行交互，包括请求下载链接并处理可能的错误。
+
+:author: assassing
+:contact: https://github.com/hxz393
+:copyright: Copyright 2023, hxz393. 保留所有权利。
+"""
+
 import logging
 import random
 import time

@@ -1,3 +1,15 @@
+"""
+这是一个Python文件，其中包含一个函数：`request_url`。
+
+函数 `request_url` 用于通过 HTTP GET 请求获取给定 URL 的响应内容。它接受一个参数 `url`，这是需要请求的URL。函数首先创建一个requests.Session对象，然后发送一个GET请求到 `url`。如果响应的状态码是200，函数将返回响应的内容，否则返回 `None`。在发生网络请求异常时，函数将记录错误并返回 `None`。
+
+此模块主要用于发送HTTP GET请求并处理可能的异常。
+
+:author: assassing
+:contact: https://github.com/hxz393
+:copyright: Copyright 2023, hxz393. 保留所有权利。
+"""
+
 import logging
 from typing import Optional
 
@@ -23,7 +35,6 @@ def request_url(url: str) -> Optional[str]:
 
     try:
         response = session.get(url, verify=False, timeout=5)
-        # 检查响应的状态码，如果不是 200，则抛出异常
         response.raise_for_status()
         return response.text.strip()
     except requests.exceptions.RequestException as e:

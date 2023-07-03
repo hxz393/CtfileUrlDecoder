@@ -1,3 +1,7 @@
+"""
+全局变量
+"""
+
 CONFIG_PATH = r'config.txt'
 MAX_FILE_SIZE = 5 * 1024 * 1024
 CHECK_UPDATE_URL = "https://blog.x2b.net/ver/ctfileurldecoderversion.txt"

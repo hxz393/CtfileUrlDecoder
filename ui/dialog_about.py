@@ -1,17 +1,49 @@
+"""
+这是一个Python文件，包含了一个关于对话框的类 DialogAbout。
+
+类 DialogAbout 是一个对话框，显示了关于此应用程序的信息。这个对话框由三组部件构成，包括应用程序图标，标题和版本信息，作者、网站和项目主页信息，以及程序简介和使用限制。
+
+函数 construct_first_group 创建了第一组部件，包括应用程序图标，标题和版本信息。
+
+函数 add_title_and_version 添加了标题和版本信息到对话框中。
+
+函数 construct_second_group 创建了第二组部件，包括作者、网站和项目主页信息。
+
+函数 add_author_info 添加了作者信息到对话框中。
+
+函数 add_website_info 添加了网站信息到对话框中。
+
+函数 add_project_info 添加了项目主页信息到对话框中。
+
+函数 construct_third_group 创建了第三组部件，包括程序简介和使用限制。
+
+函数 get_info_text 返回了程序的简介和使用限制信息。
+
+这个模块的主要功能是构建一个显示程序信息的对话框。
+
+:author: assassing
+:contact: https://github.com/hxz393
+:copyright: Copyright 2023, hxz393. 保留所有权利。
+"""
+
 import logging
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QHBoxLayout, QLabel, QWidget, QFormLayout, QTextEdit
 
-from module.settings import VERSION_INFO
 from module.get_resource_path import get_resource_path
+from module.settings import VERSION_INFO
 
 logger = logging.getLogger(__name__)
 
 
 # noinspection PyMethodMayBeStatic
 class DialogAbout(QDialog):
+    """
+    关于页面独立对话框
+    """
+
     def __init__(self):
         super(DialogAbout, self).__init__(flags=Qt.Dialog | Qt.WindowCloseButtonHint)
 
@@ -45,7 +77,7 @@ class DialogAbout(QDialog):
         first_group_widget.setStyleSheet("background-color: white;")
         first_group_widget.setLayout(first_group_layout)
 
-        ## 图标
+        # 大图标
         image = QLabel()
         image.setContentsMargins(20, 10, 20, 10)
         image.setPixmap(QPixmap(get_resource_path("media/main-96.ico")))

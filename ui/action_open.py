@@ -1,3 +1,15 @@
+"""
+这是一个Python文件，包含一个类 `ActionOpen`。
+
+类 `ActionOpen` 用于定义 "打开文件" 动作。它接受两个参数，`main_window` 代表所属的主窗口，`text_input` 是链接文本框。在 `__init__` 方法中，我们定义了一个 QAction 对象 `action_open`，并将其与 `open_file` 方法连接。当动作被触发时，`open_file` 方法会尝试打开一个文件并将其内容读取到链接文本框。
+
+这个模块主要用于定义和实现 "打开文件" 动作，包括创建动作，设置动作属性和定义动作的触发行为。
+
+:author: assassing
+:contact: https://github.com/hxz393
+:copyright: Copyright 2023, hxz393. 保留所有权利。
+"""
+
 import logging
 import os
 from typing import Optional
@@ -13,6 +25,12 @@ logger = logging.getLogger(__name__)
 
 
 class ActionOpen:
+    """
+    打开文件类。
+
+    该类用于创建一个打开文件的动作，该动作可以打开一个文件并将其内容读取到链接文本框。
+    """
+
     def __init__(self, main_window: QMainWindow, text_input: CodeEditor):
         """
         初始化动作。

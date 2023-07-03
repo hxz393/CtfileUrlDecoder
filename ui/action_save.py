@@ -1,16 +1,34 @@
+"""
+这是一个Python文件，包含一个类 `ActionSave`。
+
+类 `ActionSave` 用于定义 "保存文件" 动作。它接受两个参数，`main_window` 代表所属的主窗口，`text_output` 是输出文本框。在 `__init__` 方法中，我们定义了一个 QAction 对象 `action_save`，并将其与 `save_file` 方法连接。当动作被触发时，`save_file` 方法会尝试保存文件并将输出文本框中的内容写入到文件。
+
+这个模块主要用于定义和实现 "保存文件" 动作，包括创建动作，设置动作属性和定义动作的触发行为。
+
+:author: assassing
+:contact: https://github.com/hxz393
+:copyright: Copyright 2023, hxz393. 保留所有权利。
+"""
+
 import logging
 from typing import Optional
 
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QAction, QFileDialog, QMainWindow
 
-from ui.code_editor import CodeEditor
 from module.get_resource_path import get_resource_path
+from ui.code_editor import CodeEditor
 
 logger = logging.getLogger(__name__)
 
 
 class ActionSave:
+    """
+    保存文件类。
+
+    该类用于创建一个保存文件的动作，该动作可以将输出文本框中的内容写入到文件。
+    """
+
     def __init__(self, main_window: QMainWindow, text_output: CodeEditor):
         """
         初始化动作。

@@ -1,3 +1,7 @@
+"""
+导入 UI 相关函数
+"""
+
 from .action_about import ActionAbout
 from .action_exit import ActionExit
 from .action_help import ActionHelp

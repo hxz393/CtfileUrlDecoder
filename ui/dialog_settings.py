@@ -1,3 +1,27 @@
+"""
+这是一个Python文件，其中包含一个类 DialogSettings。
+
+类 DialogSettings 是一个设置对话框，用户可以通过这个对话框修改应用的设置，包括账号token和请求间隔时间。该对话框包含两个选项卡："基本" 和 "高级"，以及两个按钮："确定" 和 "取消"。
+
+在 construct_widgets 函数中，构建了选项卡和按钮。
+
+在 construct_basic_tab 函数中，构建了 "基本" 选项卡，其中包含了账号token的输入框。
+
+在 construct_advanced_tab 函数中，构建了 "高级" 选项卡，其中包含了请求间隔时间的输入框。
+
+在 construct_buttons 函数中，构建了 "确定" 和 "取消" 按钮。
+
+函数 accept 用于接受对话框的修改，并保存配置。
+
+函数 reject 用于拒绝对话框的修改。
+
+这个模块的主要功能是提供用户修改应用设置的界面。
+
+:author: assassing
+:contact: https://github.com/hxz393
+:copyright: Copyright 2023, hxz393. 保留所有权利。
+"""
+
 import logging
 
 from PyQt5.QtCore import Qt

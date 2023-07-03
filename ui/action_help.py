@@ -1,3 +1,15 @@
+"""
+这是一个Python文件，其中包含一个类 `ActionHelp`。
+
+类 `ActionHelp` 用于定义 "获取帮助" 动作。它接受一个参数 `main_window`，代表所属的主窗口。在 `__init__` 方法中，我们定义了一个 QAction 对象 `action_help`，并将其与 `open_help_page` 方法连接。当动作被触发时，`open_help_page` 方法会尝试打开在线帮助页面。
+
+这个模块主要用于定义和实现 "获取帮助" 动作，包括创建动作，设置动作属性和定义动作的触发行为。
+
+:author: assassing
+:contact: https://github.com/hxz393
+:copyright: Copyright 2023, hxz393. 保留所有权利。
+"""
+
 import logging
 from typing import NoReturn
 
@@ -12,6 +24,12 @@ logger = logging.getLogger(__name__)
 
 # noinspection PyMethodMayBeStatic
 class ActionHelp:
+    """
+    帮助动作类。
+
+    该类用于创建一个获取帮助的动作，该动作可以打开在线帮助页面。
+    """
+
     def __init__(self, main_window: QMainWindow):
         """
         初始化动作。

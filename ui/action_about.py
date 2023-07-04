@@ -27,7 +27,7 @@ class ActionAbout:
     """
     关于动作类
 
-    该类用于创建一个打开关于页面的动作，该动作可以打开内置的关于页面。
+    该类用于创建一个打开关于页面的动作，该动作可以打开内置关于页面。
     """
 
     def __init__(self, main_window: QMainWindow):

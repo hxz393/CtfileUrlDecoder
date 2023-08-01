@@ -11,6 +11,7 @@
 """
 
 import logging
+import traceback
 import random
 import time
 from typing import Optional
@@ -55,10 +56,7 @@ def request_download_link(file: str, passwd: str, token: str, delay: str) -> Opt
         else:
             return str(response_json_code)
     except (KeyError, ValueError) as e:
-        logger.error(f"Unable to find link {url}: {e}")
+        logger.error(f"Unable to find link {url}: {e}\n{traceback.format_exc()}")
         return '-1'
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Unable to send network request to {url}: {e}")
-        return None
     finally:
         time.sleep(int(delay) / 1000.0)

@@ -15,6 +15,7 @@
 """
 
 import logging
+import traceback
 import sys
 
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
@@ -72,7 +73,7 @@ class Worker(QThread):
                 self.process_link(link)
 
         except Exception as e:
-            logger.error(e)
+            logger.error(f"Unexpected error: {e}\n{traceback.format_exc()}")
 
     def process_link(self, link):
         """
@@ -368,7 +369,7 @@ class CtfileUrlDecoder(QMainWindow):
             self.update_progress_label(0, len(links))
 
         except Exception as e:
-            logger.error(f'运行解析发生错误：{e}')
+            logger.error(f'运行解析发生错误：{e}\n{traceback.format_exc()}')
 
     def stop_worker(self):
         """
